@@ -15,9 +15,10 @@ H5P.ExportableTextArea = function (params, contentPath) {
   self.header = '<span class="index">' + self.index + '</span>. <span class="label">' + (params.label ? params.label : '') +'</span>';
   
   var attach = function ($wrapper) {
-    var classes = 'h5p-eta-input' + (H5P.ExportableTextArea.Exporter.supportsExport() ? '' : ' not-supported');
-    var text = H5P.ExportableTextArea.Exporter.supportsExport() ? '' : 'Not supported on your device';
-    self.$content = H5P.jQuery('<div class="h5p-eta-label">'+self.header+'</div><textarea class="'+classes+'" data-index="'+self.index+'">'+text+'</textarea>');
+    var supported = H5P.ExportableTextArea.Exporter.supportsExport();
+    var classes = 'h5p-eta-input' + (supported ? '' : ' not-supported');
+    var text = supported ? '' : 'Not supported on your device';
+    self.$content = H5P.jQuery('<div class="h5p-eta-label">'+self.header+'</div><textarea '+(supported ? '' : 'disabled="disabled"')+' class="'+classes+'" data-index="'+self.index+'">'+text+'</textarea>');
     $wrapper.addClass('h5p-eta').html(self.$content);
   };
   
@@ -51,7 +52,7 @@ H5P.ExportableTextArea.CPInterface = (function() {
     onDelete: function(params, slideIndex, elementIndex, elementInstance) {
       // Reorder index on current slide
       var filtered = params[slideIndex].elements.filter(function(element, index){
-        return /*index>=elementIndex &&*/ H5P.libraryFromString(element.action.library).machineName === 'H5P.ExportableTextArea';
+        return H5P.libraryFromString(element.action.library).machineName === 'H5P.ExportableTextArea';
       }).sort(function(a,b){
         return b.action.params.index - a.action.params.index;
       });
@@ -61,7 +62,7 @@ H5P.ExportableTextArea.CPInterface = (function() {
         filtered[i].action.params.index = i;
         answerCounter[slideIndex][i] = true;
         H5P.jQuery('.h5p-slides-wrapper > .h5p-current').children('.h5p-eta').eq(i).find('.index').html(i+1);
-      } 
+      }
     },
     onAdd: function(params, slideIndex, elementInstance) {
       if(answerCounter[slideIndex] === undefined) {
@@ -87,7 +88,7 @@ H5P.ExportableTextArea.Exporter = (function() {
   var useFlash = undefined;
   
   return {
-    export: function() {
+    run: function() {
       // Save it as a file:
       if (this.useFileSaver()){
         var blob = new Blob([this.createDocContent()], {type: "application/msword;charset=utf-8"});
@@ -115,11 +116,16 @@ H5P.ExportableTextArea.Exporter = (function() {
     createExportButton: function(title) {
       var self = this;
       
+      if(!H5P.ExportableTextArea.Exporter.supportsExport()) {
+        return '';
+      }
+      
       if(this.useFileSaver()) {
         return '<a href="javascript:void(0)" class="h5p-eta-export" style="display: none;">' + title + '</a>';
       }
       else {
         var $downloadify = $('<div></div>');
+        $downloadify.appendTo('body');
         
         $downloadify.downloadify({
           filename: function(){
@@ -139,7 +145,9 @@ H5P.ExportableTextArea.Exporter = (function() {
           label: title
         });
         
-        return '<a href="javascript:void(0)" class="h5p-eta-export" style="display: none;">'+$downloadify.html()+'</a>';
+        var html =  '<a href="javascript:void(0)" class="h5p-eta-export flash" style="display: none;">'+$downloadify.html()+'</a>';
+        $downloadify.remove();
+        return html;
       }
     },
     
