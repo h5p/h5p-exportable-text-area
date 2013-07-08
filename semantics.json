@@ -1,0 +1,13 @@
+[
+  {
+    "name": "label",
+    "type": "text",    
+    "label": "Label",
+    "description": "Label/heading for answer when user exports all answers"
+  },
+  {
+    "name": "index",
+    "type": "number",
+    "widget": "none"
+  }
+]

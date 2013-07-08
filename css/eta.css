@@ -1,0 +1,9 @@
+.h5p-eta-input {
+  position: absolute;
+  top: 2.1em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  resize: none !important;
+  font-size: 0.75em;
+}
