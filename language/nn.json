@@ -1,7 +1,8 @@
 {
   "semantics": [
     {
-      "label": "Eksporterbar tekst"
+      "label": "Eksporterbar tekst",
+      "description": "Overskrift som blir brukt ved eksport til dokument"
     }
   ]
 }

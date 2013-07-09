@@ -11,11 +11,19 @@
   "preloadedCss": [
     {"path": "css/eta.css"}
   ],
-  "preloadedJs": [
-    {"path": "scripts/Blob.js"},
-    {"path": "scripts/FileSaver.js"},
-    {"path": "scripts/swfobject.js"},
-    {"path": "scripts/downloadify.js"},
-    {"path": "scripts/eta.js"}
+  "preloadedJs": [    
+    {"path": "scripts/eta.js"}    
+  ],
+  "preloadedDependencies": [
+    {
+      "machineName": "filesaver",
+      "majorVersion": 1,
+      "minorVersion": 0
+    },
+    {
+      "machineName": "downloadify",
+      "majorVersion": 1,
+      "minorVersion": 0
+    }
   ]
 }

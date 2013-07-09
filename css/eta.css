@@ -2,6 +2,9 @@
   padding-top: 2em;
   overflow: visible !important;
 }
+.h5p-eta.not-supported {
+  display: none;
+}
 .h5p-eta .h5p-eta-input {
   width: 100%;
   height: 100%;
@@ -16,3 +19,4 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
