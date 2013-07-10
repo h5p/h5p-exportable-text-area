@@ -7,11 +7,11 @@ H5P.ExportableTextArea = (function ($) {
    * @param {object} params Options for this library.
    * @param {int} id Content identifier
    */
-  function C(params, id) {    
+  function C(params, id) {
     this.index = (params.index !== undefined ? params.index + 1 : '');
     this.header = '<span class="index">' + this.index + '</span>. <span class="label">' + (params.label ? params.label : '') + '</span>';
   };
-  
+
   C.prototype.attach = function ($wrapper) {
     if(H5P.ExportableTextArea.Exporter.supportsExport()) {
       this.$content = H5P.jQuery('<div class="h5p-eta-label">' + this.header + '</div><textarea class="h5p-eta-input" data-index="' + this.index + '"></textarea>');
@@ -29,7 +29,7 @@ H5P.ExportableTextArea = (function ($) {
   C.prototype.onAdd = function (params, slideIndex) {
     H5P.ExportableTextArea.CPInterface.onAdd(params, slideIndex, this);
   };
-  
+
   C.prototype.exportAnswers = true;
 
   return C;
@@ -38,7 +38,7 @@ H5P.ExportableTextArea = (function ($) {
 /**
  * Interface responsible for handling index calculations beeing done when
  * adding and removing Answer elements
- * 
+ *
  * Implemented as singleton
  */
 H5P.ExportableTextArea.CPInterface = (function () {
@@ -46,9 +46,9 @@ H5P.ExportableTextArea.CPInterface = (function () {
     return arguments.callee._singletonInstance;
   }
   arguments.callee._singletonInstance = this;
-    
+
   this.answerCounter = [];
-  
+
   this.onDelete = function (params, slideIndex, elementIndex, elementInstance) {
     // Reorder index on current slide
     var filtered = params[slideIndex].elements.filter(function (element, index) {
@@ -64,7 +64,7 @@ H5P.ExportableTextArea.CPInterface = (function () {
       H5P.jQuery('.h5p-slides-wrapper > .h5p-current').children('.h5p-eta').eq(i).find('.index').html(i + 1);
     }
   };
-  
+
   this.onAdd = function (params, slideIndex, elementInstance) {
     if (this.answerCounter[slideIndex] === undefined) {
       this.answerCounter[slideIndex] = [];
@@ -73,15 +73,15 @@ H5P.ExportableTextArea.CPInterface = (function () {
       params.action.params.index = this.answerCounter[slideIndex].length;
     }
 
-    this.answerCounter[slideIndex][params.action.params.index] = true;  
+    this.answerCounter[slideIndex][params.action.params.index] = true;
   };
-  
+
   return this;
 })();
 
 /**
  * Export all Answers
- * 
+ *
  * Implemented as singleton
  */
 H5P.ExportableTextArea.Exporter = (function () {
@@ -90,7 +90,7 @@ H5P.ExportableTextArea.Exporter = (function () {
     return arguments.callee._singletonInstance;
   }
   arguments.callee._singletonInstance = this;
-  
+
   this.deviceIsIPx = undefined;
   this.useFlash = true;//undefined;
 
@@ -177,6 +177,6 @@ H5P.ExportableTextArea.Exporter = (function () {
     }
     return deviceIsIPx;
   };
-  
+
   return this;
 })();
