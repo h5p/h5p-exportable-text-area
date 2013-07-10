@@ -92,7 +92,7 @@ H5P.ExportableTextArea.Exporter = (function () {
   arguments.callee._singletonInstance = this;
   
   this.deviceIsIPx = undefined;
-  this.useFlash = true;//undefined;
+  this.useFlash = undefined;
 
   this.run = function () {
     // Save it as a file:
