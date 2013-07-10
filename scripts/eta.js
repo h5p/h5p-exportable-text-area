@@ -41,11 +41,11 @@ H5P.ExportableTextArea = (function ($) {
  *
  * Implemented as singleton
  */
-H5P.ExportableTextArea.CPInterface = (function () {
-  if ( arguments.callee._singletonInstance ) {
-    return arguments.callee._singletonInstance;
+H5P.ExportableTextArea.CPInterface = (function _eta_cp_interface_internal() {
+  if ( _eta_cp_interface_internal._singletonInstance ) {
+    return _eta_cp_interface_internal._singletonInstance;
   }
-  arguments.callee._singletonInstance = this;
+  _eta_cp_interface_internal._singletonInstance = this;
 
   this.answerCounter = [];
 
@@ -84,12 +84,12 @@ H5P.ExportableTextArea.CPInterface = (function () {
  *
  * Implemented as singleton
  */
-H5P.ExportableTextArea.Exporter = (function () {
+H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
 
-  if ( arguments.callee._singletonInstance ) {
-    return arguments.callee._singletonInstance;
+  if ( _eta_exporter_internal._singletonInstance ) {
+    return _eta_exporter_internal._singletonInstance;
   }
-  arguments.callee._singletonInstance = this;
+  _eta_exporter_internal._singletonInstance = this;
 
   this.deviceIsIPx = undefined;
   this.useFlash = true;//undefined;
