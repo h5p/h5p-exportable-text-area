@@ -8,8 +8,8 @@ H5P.ExportableTextArea = (function ($) {
    * @param {int} id Content identifier
    */
   function C(params, id) {
-    this.index = (params.index !== undefined ? params.index + 1 : '');
-    this.header = '<span class="index">' + this.index + '</span>. <span class="label">' + (params.label ? params.label : '') + '</span>';
+    this.index = (params.index !== undefined ? params.index : -1);
+    this.header = '<span class="index">' + (this.index===-1 ? '</span>' : (this.index+1)+'</span>. ') +'<span class="label">' + (params.label ? params.label : '') + '</span>';
   };
 
   C.prototype.attach = function ($wrapper) {
@@ -50,11 +50,12 @@ H5P.ExportableTextArea.CPInterface = (function _eta_cp_interface_internal() {
   this.answerCounter = [];
 
   this.onDelete = function (params, slideIndex, elementIndex, elementInstance) {
+
     // Reorder index on current slide
     var filtered = params[slideIndex].elements.filter(function (element, index) {
       return H5P.libraryFromString(element.action.library).machineName === 'H5P.ExportableTextArea';
     }).sort(function (a, b) {
-      return b.action.params.index - a.action.params.index;
+      return a.action.params.index - b.action.params.index;
     });
 
     this.answerCounter[slideIndex] = [];
@@ -64,11 +65,22 @@ H5P.ExportableTextArea.CPInterface = (function _eta_cp_interface_internal() {
       H5P.jQuery('.h5p-slides-wrapper > .h5p-current').children('.h5p-eta').eq(i).find('.index').html(i + 1);
     }
   };
+  
+  this.onDeleteSlide = function (slideIndex) {
+    this.answerCounter[slideIndex] = [];
+  };
+  
+  this.changeSlideIndex = function(left, right) {
+    var tmp = this.answerCounter[left];
+    this.answerCounter[left] = this.answerCounter[right];
+    this.answerCounter[right] = tmp;
+  };
 
   this.onAdd = function (params, slideIndex, elementInstance) {
     if (this.answerCounter[slideIndex] === undefined) {
       this.answerCounter[slideIndex] = [];
     }
+
     if (params.action.params.index === undefined) {
       params.action.params.index = this.answerCounter[slideIndex].length;
     }
