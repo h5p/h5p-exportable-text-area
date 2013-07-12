@@ -10,16 +10,13 @@ H5P.ExportableTextArea = (function ($) {
   function C(params, id) {
     this.index = (params.index !== undefined ? params.index : -1);
     this.header = '<span class="index">' + (this.index===-1 ? '</span>' : (this.index+1)+'</span>. ') +'<span class="label">' + (params.label ? params.label : '') + '</span>';
+    this.notSupportedText = params.exportNotSupported;
   };
 
   C.prototype.attach = function ($wrapper) {
-    if(H5P.ExportableTextArea.Exporter.supportsExport()) {
-      this.$content = H5P.jQuery('<div class="h5p-eta-label">' + this.header + '</div><textarea class="h5p-eta-input" data-index="' + this.index + '"></textarea>');
-      $wrapper.addClass('h5p-eta').html(this.$content);
-    }
-    else {
-      $wrapper.addClass('not-supported');
-    }
+    var supportsExport = H5P.ExportableTextArea.Exporter.supportsExport();
+    this.$content = H5P.jQuery('<div class="h5p-eta-label">' + this.header + '</div><textarea class="h5p-eta-input" ' + (supportsExport ? '' : 'placeholder="'+this.notSupportedText+'"') + 'data-index="' + this.index + '"></textarea>');
+    $wrapper.addClass('h5p-eta').html(this.$content);
   };
 
   C.prototype.onDelete = function (params, slideIndex, elementIndex) {
