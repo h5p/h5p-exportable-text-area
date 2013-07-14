@@ -20,6 +20,7 @@ H5P.ExportableTextArea = (function ($) {
   };
 
   C.prototype.onDelete = function (params, slideIndex, elementIndex) {
+    alert('here');
     H5P.ExportableTextArea.CPInterface.onDelete(params, slideIndex, elementIndex, this);
   };
 
@@ -47,7 +48,7 @@ H5P.ExportableTextArea.CPInterface = (function _eta_cp_interface_internal() {
   this.answerCounter = [];
 
   this.onDelete = function (params, slideIndex, elementIndex, elementInstance) {
-
+alert('onDelete')
     // Reorder index on current slide
     var filtered = params[slideIndex].elements.filter(function (element, index) {
       return H5P.libraryFromString(element.action.library).machineName === 'H5P.ExportableTextArea';
@@ -56,10 +57,22 @@ H5P.ExportableTextArea.CPInterface = (function _eta_cp_interface_internal() {
     });
 
     this.answerCounter[slideIndex] = [];
-    for (var i = 0; i < filtered.length; i++) {
+    var $currentSlide = H5P.jQuery('.h5p-slides-wrapper > .h5p-current');
+  for (var i = 0; i < filtered.length; i++) {
       filtered[i].action.params.index = i;
       this.answerCounter[slideIndex][i] = true;
-      H5P.jQuery('.h5p-slides-wrapper > .h5p-current').children('.h5p-eta').eq(i).find('.index').html(i + 1);
+      var $child = $currentSlide.children('.h5p-eta').has('[data-index=' + i + ']');
+      if (!$child.length) {
+        alert('no child');
+        $child = $currentSlide.children('.h5p-eta').has('[data-index=' + (i + 1) + ']');
+        alert('child: ' + $child.length);
+        $child.find('.index').html(i + 1);
+        $child.find('.h5p-eta-input').attr('data-index', i);
+          
+      }
+      else {
+        alert('child');
+      }
     }
   };
   
