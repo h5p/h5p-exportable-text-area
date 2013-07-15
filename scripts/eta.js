@@ -122,7 +122,8 @@ H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
 
   this.createDocContent = function () {
     // Create HTML:
-    var html = '<html><head><meta charset="UTF-8"></meta></head><body>';
+    // me + ta and other hacks to avoid that new relic injects script...
+    var html = '<ht' + 'ml><he' + 'ad><me' + 'ta charset="UTF-8"></me' + 'ta></he' + 'ad><bo' + 'dy>';
     H5P.jQuery('.h5p-slide').each(function (index) {
       // Sort on index per slide, then create html
       H5P.jQuery('.h5p-eta-input', this).sort(function (a, b) {
