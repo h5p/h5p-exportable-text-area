@@ -123,17 +123,24 @@ H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
   this.createDocContent = function () {
     // Create HTML:
     // me + ta and other hacks to avoid that new relic injects script...
-    var html = '<ht' + 'ml><he' + 'ad><me' + 'ta charset="UTF-8"></me' + 'ta></he' + 'ad><bo' + 'dy>';
+    var html = '';
     H5P.jQuery('.h5p-slide').each(function (index) {
-      // Sort on index per slide, then create html
-      H5P.jQuery('.h5p-eta-input', this).sort(function (a, b) {
+      var $inputs = H5P.jQuery('.h5p-eta-input', this).sort(function (a, b) {
         return H5P.jQuery(a).data('index') > H5P.jQuery(b).data('index') ? 1 : -1;
-      }).each(function () {
-        html += '<h2>' + H5P.jQuery(this).prev().find('.label').text() + '</h2>';
-        html += '<p>' + H5P.jQuery(this).val() + '</p>';
       });
+
+      if ($inputs.length) {
+        if (html) {
+          html += '<hr/>';
+        }
+        // Sort on index per slide, then create html
+        $inputs.each(function () {
+          html += '<h3>' + H5P.jQuery(this).prev().find('.label').text() + '</h3>'
+                + '<p>' + H5P.jQuery(this).val() + '</p>';
+        });
+      }
     });
-    html += '</body></html>';
+    html = '<ht' + 'ml><he' + 'ad><me' + 'ta charset="UTF-8"></me' + 'ta></he' + 'ad><bo' + 'dy>' + html + '</bo' + 'dy></ht' + 'ml>';
 
     return html;
   };
