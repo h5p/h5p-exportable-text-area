@@ -1,9 +1,21 @@
 [
   {
     "name": "label",
-    "type": "text",    
+    "type": "text",
+    "widget": "html",
     "label": "Label",
-    "description": "Label/heading for answer when user exports all answers"
+    "description": "Label/heading for answer when user exports all answers",
+    "enterMode": "p",
+    "tags": [
+      "strong",
+      "em",
+      "a",
+      "ul",
+      "ol",
+      "h2",
+      "h3",
+      "hr"
+    ]
   },
   {
     "name": "index",

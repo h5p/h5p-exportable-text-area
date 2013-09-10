@@ -121,8 +121,6 @@ H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
   };
 
   this.createDocContent = function () {
-    // Create HTML:
-    // me + ta and other hacks to avoid that new relic injects script...
     var html = '';
     H5P.jQuery('.h5p-slide').each(function (index) {
       var $inputs = H5P.jQuery('.h5p-eta-input', this).sort(function (a, b) {
@@ -135,11 +133,13 @@ H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
         }
         // Sort on index per slide, then create html
         $inputs.each(function () {
-          html += '<h3>' + H5P.jQuery(this).prev().find('.label').text() + '</h3>'
+          html += H5P.jQuery(this).prev().find('.label').html()
                 + '<p>' + H5P.jQuery(this).val() + '</p>';
         });
       }
     });
+    // Create HTML:
+    // me + ta and other hacks to avoid that new relic injects script...
     html = '<ht' + 'ml><he' + 'ad><me' + 'ta charset="UTF-8"></me' + 'ta></he' + 'ad><bo' + 'dy>' + html + '</bo' + 'dy></ht' + 'ml>';
 
     return html;
@@ -155,7 +155,7 @@ H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
     if (this.useFileSaver()) {
       return '<a href="#" class="h5p-eta-export">' + title + '</a>';
     } else {
-      var $downloadify = H5P.jQuery('<div></div>');
+      var $downloadify = $('<div></div>');
       $downloadify.appendTo('body');
 
       $downloadify.downloadify({
