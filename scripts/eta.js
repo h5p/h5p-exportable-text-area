@@ -128,9 +128,7 @@ H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
       });
 
       if ($inputs.length) {
-        if (html) {
-          html += '<hr/>';
-        }
+        html += '<hr/>';
         // Sort on index per slide, then create html
         $inputs.each(function () {
           html += H5P.jQuery(this).prev().find('.label').html()
@@ -140,7 +138,7 @@ H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
     });
     // Create HTML:
     // me + ta and other hacks to avoid that new relic injects script...
-    html = '<ht' + 'ml><he' + 'ad><me' + 'ta charset="UTF-8"></me' + 'ta></he' + 'ad><bo' + 'dy>' + html + '</bo' + 'dy></ht' + 'ml>';
+    html = '<ht' + 'ml><he' + 'ad><me' + 'ta charset="UTF-8"></me' + 'ta></he' + 'ad><bo' + 'dy><p><a href="' + document.URL + '">' + document.URL + '</a></p>' + html + '</bo' + 'dy></ht' + 'ml>';
 
     return html;
   };
