@@ -28,5 +28,12 @@
     "label": "Export not supported label",
     "default": "Export not supported on your device",
     "common": true
+  },
+  {
+    "name": "exportComments",
+    "type": "boolean",
+    "label": "Include comments in the exported document",
+    "optional": true,
+    "default": false
   }
 ]

@@ -9,17 +9,20 @@ H5P.ExportableTextArea = (function ($) {
    */
   function C(params, id) {
     this.index = (params.index !== undefined ? params.index : -1);
-    this.header = params.label;
+    this.header = (params.label !== undefined ? params.label : '');
     this.notSupportedText = params.exportNotSupported;
   };
 
   C.prototype.attach = function ($wrapper) {
     var supportsExport = H5P.ExportableTextArea.Exporter.supportsExport();
     this.$content = $wrapper.addClass('h5p-eta').html('<div class="h5p-eta-label">' + this.header + '</div><textarea class="h5p-eta-input" ' + (supportsExport ? '' : 'placeholder="' + this.notSupportedText + '"') + 'data-index="' + this.index + '"></textarea>');
+    this.$label = this.$content.children('.h5p-eta-label');
+    this.$input = this.$content.children('.h5p-eta-input');
+    this.resize();
   };
 
   C.prototype.resize = function () {
-    this.$content.children('.h5p-eta-input').css('height', this.$content.height() - this.$content.children('.h5p-eta-label').height());
+    this.$input.css('height', this.$content.height() - this.$label.height());
   };
 
   C.prototype.onDelete = function (params, slideIndex, elementIndex) {
@@ -113,32 +116,43 @@ H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
   this.deviceIsIPx = undefined;
   this.useFlash = undefined;
 
-  this.run = function () {
+  this.run = function (slides, elements) {
     // Save it as a file:
     if (this.useFileSaver()) {
-      var blob = new Blob([this.createDocContent()], {
+      var blob = new Blob([this.createDocContent(slides, elements)], {
         type: "application/msword;charset=utf-8"
       });
       saveAs(blob, 'exported-text.doc');
     }
   };
 
-  this.createDocContent = function () {
+  this.createDocContent = function (slides, elements) {
     var html = '';
-    H5P.jQuery('.h5p-slide').each(function (index) {
-      var $inputs = H5P.jQuery('.h5p-eta-input', this).sort(function (a, b) {
-        return H5P.jQuery(a).data('index') > H5P.jQuery(b).data('index') ? 1 : -1;
-      });
 
-      if ($inputs.length) {
-        html += '<hr/>';
-        // Sort on index per slide, then create html
-        $inputs.each(function () {
-          html += H5P.jQuery(this).prev().find('.label').html()
-                + '<p>' + H5P.jQuery(this).val() + '</p>';
-        });
+    for (var i = 0; i < slides.length; i++) {
+      var slideHtml = [];
+
+      for (var j = 0; j < elements[i].length; j++) {
+        var element = elements[i][j];
+
+        if (element instanceof H5P.ExportableTextArea) {
+          var params = slides[i].elements[j];
+          slideHtml[element.index] = element.header + '<p>' + element.$input.val() + '</p>';
+
+          if (params.action.params.exportComments !== undefined && params.action.params.exportComments) {
+            slideHtml[element.index] += params.solution;
+          }
+        }
       }
-    });
+
+      if (slideHtml.length) {
+        if (html) {
+          html += '<hr/>';
+        }
+        html += slideHtml.join('');
+      }
+    }
+
     // Create HTML:
     // me + ta and other hacks to avoid that new relic injects script...
     html = '<ht' + 'ml><he' + 'ad><me' + 'ta charset="UTF-8"></me' + 'ta></he' + 'ad><bo' + 'dy><p><a href="' + document.URL + '">' + document.URL + '</a></p>' + html + '</bo' + 'dy></ht' + 'ml>';
