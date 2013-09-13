@@ -170,7 +170,7 @@ H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
     if (this.useFileSaver()) {
       return '<a href="#" class="h5p-eta-export">' + title + '</a>';
     } else {
-      var $downloadify = $('<div></div>');
+      var $downloadify = H5P.jQuery('<div></div>');
       $downloadify.appendTo('body');
 
       $downloadify.downloadify({
