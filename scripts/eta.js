@@ -137,8 +137,9 @@ H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
 
         if (element instanceof H5P.ExportableTextArea) {
           var params = slides[i].elements[j];
-          slideHtml[element.index] = element.header + '<p>' + element.$input.val() + '</p>';
-
+          var input = (element.$input !== undefined ? element.$input.val() : '');
+          slideHtml[element.index] = element.header + '<p>' + input + '</p>';
+          
           if (params.action.params.exportComments !== undefined && params.action.params.exportComments) {
             slideHtml[element.index] += params.solution;
           }
