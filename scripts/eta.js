@@ -8,6 +8,7 @@ H5P.ExportableTextArea = (function ($) {
    * @param {int} id Content identifier
    */
   function C(params, id) {
+    this.$ = $(this);
     this.index = (params.index !== undefined ? params.index : -1);
     this.header = (params.label !== undefined ? params.label : '');
     this.notSupportedText = params.exportNotSupported;
@@ -18,7 +19,6 @@ H5P.ExportableTextArea = (function ($) {
     this.$content = $wrapper.addClass('h5p-eta').html('<div class="h5p-eta-label">' + this.header + '</div><textarea class="h5p-eta-input" ' + (supportsExport ? '' : 'placeholder="' + this.notSupportedText + '"') + 'data-index="' + this.index + '"></textarea>');
     this.$label = this.$content.children('.h5p-eta-label');
     this.$input = this.$content.children('.h5p-eta-input');
-    this.resize();
   };
 
   C.prototype.resize = function () {
