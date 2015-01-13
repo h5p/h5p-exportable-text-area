@@ -53,9 +53,8 @@ H5P.ExportableTextArea.CPInterface = (function _eta_cp_interface_internal() {
   this.answerCounter = [];
 
   this.onDelete = function (params, slideIndex, elementIndex, elementInstance) {
-
     // Reorder index on current slide
-    var filtered = params[slideIndex].elements.filter(function (element, index) {
+    var filtered = params.slides[slideIndex].elements.filter(function (element, index) {
       return H5P.libraryFromString(element.action.library).machineName === 'H5P.ExportableTextArea';
     }).sort(function (a, b) {
       return a.action.params.index - b.action.params.index;
