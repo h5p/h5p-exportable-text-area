@@ -8,7 +8,6 @@ H5P.ExportableTextArea = (function ($) {
    * @param {int} id Content identifier
    */
   function C(params, id) {
-    this.$ = $(this);
     this.index = (params.index !== undefined ? params.index : -1);
     this.header = (params.label !== undefined ? params.label : '');
     this.notSupportedText = params.exportNotSupported;
