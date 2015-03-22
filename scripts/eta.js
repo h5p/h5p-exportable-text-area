@@ -33,6 +33,10 @@ H5P.ExportableTextArea = (function ($) {
   };
 
   C.prototype.exportAnswers = true;
+  
+  C.prototype.getH5PTitle = function() {
+    return H5P.createH5PTitle(this.header);
+  };
 
   return C;
 })(H5P.jQuery);
