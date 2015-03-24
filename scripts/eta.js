@@ -7,15 +7,16 @@ H5P.ExportableTextArea = (function ($) {
    * @param {object} params Options for this library.
    * @param {int} id Content identifier
    */
-  function C(params, id) {
+  function C(params, id, contentData) {
     this.index = (params.index !== undefined ? params.index : -1);
     this.header = (params.label !== undefined ? params.label : '');
     this.notSupportedText = params.exportNotSupported;
-  };
+    this.defaultAnswer = (contentData && contentData.previousState ? contentData.previousState.answer : '');
+  }
 
   C.prototype.attach = function ($wrapper) {
     var supportsExport = H5P.ExportableTextArea.Exporter.supportsExport();
-    this.$content = $wrapper.addClass('h5p-eta').html('<div class="h5p-eta-label">' + this.header + '</div><textarea class="h5p-eta-input" ' + (supportsExport ? '' : 'placeholder="' + this.notSupportedText + '"') + 'data-index="' + this.index + '"></textarea>');
+    this.$content = $wrapper.addClass('h5p-eta').html('<div class="h5p-eta-label">' + this.header + '</div><textarea class="h5p-eta-input" ' + (supportsExport ? '' : 'placeholder="' + this.notSupportedText + '"') + 'data-index="' + this.index + '">' + this.defaultAnswer + '</textarea>');
     this.$label = this.$content.children('.h5p-eta-label');
     this.$input = this.$content.children('.h5p-eta-input');
   };
@@ -33,9 +34,18 @@ H5P.ExportableTextArea = (function ($) {
   };
 
   C.prototype.exportAnswers = true;
-  
+
   C.prototype.getH5PTitle = function() {
     return H5P.createH5PTitle(this.header);
+  };
+
+  C.prototype.getCurrentState = function () {
+    var text = this.$input.val();
+    if (text.trim()) {
+      return {
+        answer: text
+      };
+    }
   };
 
   return C;
@@ -141,7 +151,7 @@ H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
           var params = slides[i].elements[j];
           var input = (element.$input !== undefined ? element.$input.val() : '');
           slideHtml[element.index] = element.header + '<p>' + input + '</p>';
-          
+
           if (params.action.params.exportComments !== undefined && params.action.params.exportComments) {
             slideHtml[element.index] += params.solution;
           }
