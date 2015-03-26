@@ -141,7 +141,7 @@ H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
   this.createDocContent = function (slides, elements) {
     var html = '';
 
-    for (var i = 0; i < slides.length; i++) {
+    for (var i = 0; i < elements.length; i++) {
       var slideHtml = [];
 
       for (var j = 0; j < elements[i].length; j++) {
