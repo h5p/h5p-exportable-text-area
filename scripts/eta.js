@@ -35,8 +35,8 @@ H5P.ExportableTextArea = (function ($) {
 
   C.prototype.exportAnswers = true;
 
-  C.prototype.getH5PTitle = function() {
-    return H5P.createH5PTitle(this.header);
+  C.prototype.getTitle = function() {
+    return H5P.createTitle(this.header);
   };
 
   C.prototype.getCurrentState = function () {
