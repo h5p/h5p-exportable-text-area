@@ -6,8 +6,12 @@
   resize: none !important;
   font-size: 100%;
   padding: 0;
+  box-sizing: border-box;
 }
 .h5p-eta-label {
   overflow: hidden;
   padding: 0.375em 0.5em;
+}
+.h5p-eta-label p:last-child {
+  margin-bottom: 0;
 }

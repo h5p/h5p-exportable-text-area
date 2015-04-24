@@ -22,7 +22,8 @@ H5P.ExportableTextArea = (function ($) {
   };
 
   C.prototype.resize = function () {
-    this.$input.css('height', this.$content.height() - this.$label.height());
+    this.$input.css('height', this.$content.height() - this.$label.outerHeight() - 1);
+    // - 1 to make sure bottom border is always visisble (rounding issue)
   };
 
   C.prototype.onDelete = function (params, slideIndex, elementIndex) {
