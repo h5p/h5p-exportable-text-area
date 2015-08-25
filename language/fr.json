@@ -6,8 +6,7 @@
     },
     {},
     {
-      "label": "Texte d'exportation non supportée",
-      "default": "Exportation non supportée par votre appareil"
+      "label": "Texte d'exportation non supportée"
     },
     {
       "label": "Inclure les commentaires dans le document exporté"
