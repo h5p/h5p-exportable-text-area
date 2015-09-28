@@ -21,11 +21,6 @@ H5P.ExportableTextArea = (function ($) {
     this.$input = this.$content.children('.h5p-eta-input');
   };
 
-  C.prototype.resize = function () {
-    this.$input.css('height', this.$content.height() - this.$label.outerHeight() - 1);
-    // - 1 to make sure bottom border is always visisble (rounding issue)
-  };
-
   C.prototype.onDelete = function (params, slideIndex, elementIndex) {
     H5P.ExportableTextArea.CPInterface.onDelete(params, slideIndex, elementIndex, this);
   };

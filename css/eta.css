@@ -1,6 +1,15 @@
 .h5p-eta.h5p-element {
   overflow: visible;
 }
+
+.h5p-eta {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
 .h5p-eta .h5p-eta-input {
   width: 100%;
   resize: none !important;
@@ -10,6 +19,7 @@
   line-height: 1.25em;
   box-sizing: border-box;
   outline: none;
+  flex: auto;
 }
 .h5p-eta .h5p-eta-input:focus {
   border-color: #53a0ff;
@@ -17,6 +27,7 @@
 .h5p-eta-label {
   overflow: hidden;
   padding: 0.375em 0.5em;
+  flex: none;
 }
 .h5p-eta-label p:last-child {
   margin-bottom: 0;
