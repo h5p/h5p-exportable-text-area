@@ -143,7 +143,7 @@ H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
       for (var j = 0; j < elements[i].length; j++) {
         var element = elements[i][j];
 
-        if (element instanceof H5P.ExportableTextArea) {
+        if (element.libraryInfo && element.libraryInfo.machineName === 'H5P.ExportableTextArea') {
           var params = slides[i].elements[j];
           var input = (element.$input !== undefined ? element.$input.val() : '');
           slideHtml[element.index] = element.header + '<p>' + input.replace(/(\r\n|\r|\n)/g, '<br/>') + '</p>';
