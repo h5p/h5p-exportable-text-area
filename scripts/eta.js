@@ -21,11 +21,6 @@ H5P.ExportableTextArea = (function ($) {
     this.$input = this.$content.children('.h5p-eta-input');
   };
 
-  C.prototype.resize = function () {
-    this.$input.css('height', this.$content.height() - this.$label.outerHeight() - 1);
-    // - 1 to make sure bottom border is always visisble (rounding issue)
-  };
-
   C.prototype.onDelete = function (params, slideIndex, elementIndex) {
     H5P.ExportableTextArea.CPInterface.onDelete(params, slideIndex, elementIndex, this);
   };
@@ -148,10 +143,10 @@ H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
       for (var j = 0; j < elements[i].length; j++) {
         var element = elements[i][j];
 
-        if (element instanceof H5P.ExportableTextArea) {
+        if (element.libraryInfo && element.libraryInfo.machineName === 'H5P.ExportableTextArea') {
           var params = slides[i].elements[j];
           var input = (element.$input !== undefined ? element.$input.val() : '');
-          slideHtml[element.index] = element.header + '<p>' + input.replace(/(\r\n|\r|\n)/g, '<br/>') + '</p>';
+          slideHtml[element.index] = element.header + '<p>' + input.replace(/(\r\n|\r|\n)/g, '<br>') + '</p>';
 
           if (params.action.params.exportComments !== undefined && params.action.params.exportComments) {
             slideHtml[element.index] += params.solution;
