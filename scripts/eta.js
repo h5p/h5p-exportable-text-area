@@ -12,13 +12,16 @@ H5P.ExportableTextArea = (function ($) {
     this.header = (params.label !== undefined ? params.label : '');
     this.notSupportedText = params.exportNotSupported;
     this.defaultAnswer = (contentData && contentData.previousState ? contentData.previousState.answer : '');
+
+    var supportsExport = H5P.ExportableTextArea.Exporter.supportsExport();
+    this.$label = $('<div class="h5p-eta-label">' + this.header + '</div>');
+    this.$input = $('<textarea class="h5p-eta-input" ' + (supportsExport ? '' : 'placeholder="' + this.notSupportedText + '"') + 'data-index="' + this.index + '">' + this.defaultAnswer + '</textarea>');
   }
 
   C.prototype.attach = function ($wrapper) {
-    var supportsExport = H5P.ExportableTextArea.Exporter.supportsExport();
-    this.$content = $wrapper.addClass('h5p-eta').html('<div class="h5p-eta-label">' + this.header + '</div><textarea class="h5p-eta-input" ' + (supportsExport ? '' : 'placeholder="' + this.notSupportedText + '"') + 'data-index="' + this.index + '">' + this.defaultAnswer + '</textarea>');
-    this.$label = this.$content.children('.h5p-eta-label');
-    this.$input = this.$content.children('.h5p-eta-input');
+    this.$content = $wrapper.addClass('h5p-eta')
+      .append(this.$label)
+      .append(this.$input);
   };
 
   C.prototype.onDelete = function (params, slideIndex, elementIndex) {
@@ -139,6 +142,11 @@ H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
 
     for (var i = 0; i < elements.length; i++) {
       var slideHtml = [];
+
+      // Empty slide
+      if (!elements[i]) {
+        continue;
+      }
 
       for (var j = 0; j < elements[i].length; j++) {
         var element = elements[i][j];
