@@ -1,15 +1,18 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "label": "Etichetta",
-      "description": "Etichetta/intestazione per risposta quando l'utente esporta tutte le risposte"
-    },
-    {},
-    {
-      "label": "Etichetta esportazione non supportata"
+      "label":"Etichetta",
+      "description":"Etichetta/intestazione per risposta quando l'utente esporta tutte le risposte"
     },
     {
-      "label": "Includi i commenti nel documento esportato"
+      
+    },
+    {
+      "label":"Etichetta esportazione non supportata",
+      "default":"Export not supported on your device"
+    },
+    {
+      "label":"Includi i commenti nel documento esportato"
     }
   ]
 }
