@@ -1,18 +1,18 @@
 {
   "semantics":[
     {
-      "label":"Label",
-      "description":"Label/heading for answer when user exports all answers"
+      "label":"Kysymys tai otsikko",
+      "description":"Tekstikentän otsikko. Näkyy myös vietävässä asiakirjassa."
     },
     {
       
     },
     {
-      "label":"Export not supported label",
-      "default":"Export not supported on your device"
+      "label":"Vientiä ei tueta",
+      "default":"Vientiä ei tueta laitteellasi"
     },
     {
-      "label":"Include comments in the exported document"
+      "label":"Sisällytä kommentit vietävään asiakirjaan"
     }
   ]
 }
