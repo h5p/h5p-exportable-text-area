@@ -1,18 +1,16 @@
 {
-  "semantics":[
+  "semantics": [
     {
-      "label":"Label",
-      "description":"Label/Überschrift für die Antwort, wenn der Benutzer alle Antworten exportiert"
+      "label": "Label",
+      "description": "Label/Überschrift für die Antwort, wenn der Benutzer alle Antworten exportiert"
+    },
+    {},
+    {
+      "label": "Label für nicht unterstützen Export",
+      "default": "Der Export wird auf diesem Gerät nicht unterstützt"
     },
     {
-
-    },
-    {
-      "label":"Label für nicht unterstützen Export",
-      "default":"Der Export wird auf diesem Gerät nicht unterstützt"
-    },
-    {
-      "label":"Kommentare im exportierten Dokument miteinbeziehen"
+      "label": "Kommentare im exportierten Dokument miteinbeziehen"
     }
   ]
 }
