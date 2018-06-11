@@ -1,18 +1,16 @@
 {
-  "semantics":[
+  "semantics": [
     {
-      "label":"Exporter les réponses",
-      "description":"Texte/entête pour l'exportation des réponses."
+      "label": "Exporter les réponses",
+      "description": "Texte d'entête pour l'exportation des réponses."
+    },
+    {},
+    {
+      "label": "Texte d'exportation non supportée",
+      "default": "La fonction export n'est pas supportée sur cet équipement."
     },
     {
-      
-    },
-    {
-      "label":"Texte d'exportation non supportée",
-      "default":"Export not supported on your device"
-    },
-    {
-      "label":"Inclure les commentaires dans le document exporté"
+      "label": "Inclure les commentaires dans le document exporté"
     }
   ]
 }
