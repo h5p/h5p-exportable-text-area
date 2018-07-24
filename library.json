@@ -3,8 +3,8 @@
   "contentType": "Static content",
   "description": "Library that displays an area where the user may input text, which is exportable as a doc-file",
   "majorVersion": 1,
-  "minorVersion": 2,
-  "patchVersion": 10,
+  "minorVersion": 3,
+  "patchVersion": 0,
   "coreApi": {
     "majorVersion": 1,
     "minorVersion": 5
