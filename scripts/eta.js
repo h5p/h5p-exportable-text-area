@@ -12,6 +12,7 @@ H5P.ExportableTextArea = (function ($) {
     this.header = (params.label !== undefined ? params.label : '');
     this.notSupportedText = params.exportNotSupported;
     this.defaultAnswer = (contentData && contentData.previousState ? contentData.previousState.answer : '');
+    this.contentData = contentData;
 
     var supportsExport = H5P.ExportableTextArea.Exporter.supportsExport();
     this.$label = $('<div class="h5p-eta-label">' + this.header + '</div>');
@@ -35,7 +36,7 @@ H5P.ExportableTextArea = (function ($) {
   C.prototype.exportAnswers = true;
 
   C.prototype.getTitle = function() {
-    return H5P.createTitle(this.header);
+    return H5P.createTitle((this.contentData && this.contentData.metadata && this.contentData.metadata.title) ? this.contentData.metadata.title : '');
   };
 
   C.prototype.getCurrentState = function () {
