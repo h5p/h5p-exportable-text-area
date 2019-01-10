@@ -13,7 +13,7 @@
   "machineName": "H5P.ExportableTextArea",
   "author": "Joubel",
   "metadataSettings": {
-    "disable": 1,
+    "disable": 0,
     "disableExtraTitleField": 1
   },
   "preloadedCss": [
