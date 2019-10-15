@@ -15,8 +15,9 @@ H5P.ExportableTextArea = (function ($) {
     this.contentData = contentData;
 
     var supportsExport = H5P.ExportableTextArea.Exporter.supportsExport();
-    this.$label = $('<div class="h5p-eta-label">' + this.header + '</div>');
-    this.$input = $('<textarea class="h5p-eta-input" ' + (supportsExport ? '' : 'placeholder="' + this.notSupportedText + '"') + 'data-index="' + this.index + '">' + this.defaultAnswer + '</textarea>');
+    var labelId = (contentData.subContentId ? contentData.subContentId : id) + '-label';
+    this.$label = $('<div id="' + labelId + '" class="h5p-eta-label">' + this.header + '</div>');
+    this.$input = $('<textarea class="h5p-eta-input" aria-labelledby="' + labelId + '" ' + (supportsExport ? '' : 'placeholder="' + this.notSupportedText + '"') + 'data-index="' + this.index + '">' + this.defaultAnswer + '</textarea>');
   }
 
   C.prototype.attach = function ($wrapper) {
