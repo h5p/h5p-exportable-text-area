@@ -2,12 +2,12 @@
   "semantics": [
     {
       "label": "Etichetta",
-      "description": "Etichetta/intestazione per risposta quando l'utente esporta tutte le risposte"
+      "description": "Etichetta/intestazione per risposta quando l'apprendente esporta tutte le risposte"
     },
     {},
     {
-      "label": "Etichetta esportazione non supportata",
-      "default": "Export not supported on your device"
+      "label": "Etichetta per esportazione non supportata",
+      "default": "Esportazione non supportata sul tuo dispositivo"
     },
     {
       "label": "Includi i commenti nel documento esportato"
