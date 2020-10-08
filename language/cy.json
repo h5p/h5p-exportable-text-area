@@ -1,0 +1,16 @@
+{
+  "semantics": [
+    {
+      "label": "Label",
+      "description": "Label/pennawd am ateb pan fydd defnyddiwr yn allforio pob ateb"
+    },
+    {},
+    {
+      "label": "Label am fethu allforio",
+      "default": "Dyw eich dyfais ddim yn caniatáu allforio "
+    },
+    {
+      "label": "Cynnwys sylwadau yn y ddogfen wrth allforio"
+    }
+  ]
+}
