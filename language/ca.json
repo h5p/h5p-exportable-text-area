@@ -7,7 +7,7 @@
     {},
     {
       "label": "Etiqueta que indica que l’exportació no s’admet",
-      "default": "L’exportació no s’admet al vostre dispositiu."
+      "default": "L’exportació no s’admet al vostre dispositiu"
     },
     {
       "label": "Inclou els comentaris al document exportat"
