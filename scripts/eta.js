@@ -1,4 +1,5 @@
 var H5P = H5P || {};
+var H5PIntegration = H5PIntegration || {};
 
 H5P.ExportableTextArea = (function ($) {
   /**
@@ -172,9 +173,10 @@ H5P.ExportableTextArea.Exporter = (function _eta_exporter_internal() {
       }
     }
 
+    var documentUrl = H5PIntegration.documentUrl ? H5PIntegration.documentUrl : document.URL;
     // Create HTML:
     // me + ta and other hacks to avoid that new relic injects script...
-    html = '<ht' + 'ml><he' + 'ad><me' + 'ta charset="UTF-8"></me' + 'ta></he' + 'ad><bo' + 'dy><p><a href="' + document.URL + '">' + document.URL + '</a></p>' + html + '</bo' + 'dy></ht' + 'ml>';
+    html = '<ht' + 'ml><he' + 'ad><me' + 'ta charset="UTF-8"></me' + 'ta></he' + 'ad><bo' + 'dy><p><a href="' + documentUrl + '">' + documentUrl + '</a></p>' + html + '</bo' + 'dy></ht' + 'ml>';
 
     return html;
   };
