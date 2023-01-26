@@ -1,4 +1,4 @@
-import { Document, Packer, Paragraph, TextRun } from "docx";
+import { Document, ExternalHyperlink, Packer, Paragraph, TextRun } from "docx";
 import { saveAs } from "file-saver";
 
 const ExportableTextArea = (function ($) {
@@ -172,11 +172,19 @@ ExportableTextArea.Exporter = {
       });
     });
 
-    // Include the URL to the content at the top of the document
+    // Include the URL to the content as a hyperlink at the top of the document
     paragraphs.unshift(new Paragraph({
       children: [
-        new TextRun({ text: document.URL, bold: true }),
-      ]
+        new ExternalHyperlink({
+          children: [
+            new TextRun({
+              text: document.URL,
+              style: "Hyperlink",
+            }),
+          ],
+          link: document.URL,
+        }),
+      ],
     }));
 
     return new Document({
