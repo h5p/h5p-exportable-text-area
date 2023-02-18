@@ -6,11 +6,11 @@
     },
     {},
     {
-      "label": "Export not supported label",
-      "default": "Export not supported on your device"
+      "label": "Etiqueta de exportação não suportada",
+      "default": "Exportação não suportada no seu dispositivo"
     },
     {
-      "label": "Include comments in the exported document"
+      "label": "Incluir comentários no documento exportado"
     }
   ]
 }
