@@ -2,15 +2,15 @@
   "semantics": [
     {
       "label": "Label",
-      "description": "Label/heading for answer when user exports all answers"
+      "description": "Etikett/rubrik för svar när användaren exporterar alla svar"
     },
     {},
     {
-      "label": "Export not supported label",
-      "default": "Export not supported on your device"
+      "label": "Etikett för att export inte stöds",
+      "default": "Export stöds inte på din enhet"
     },
     {
-      "label": "Include comments in the exported document"
+      "label": "Inkludera kommentarer i det exporterade dokumentet"
     }
   ]
 }
