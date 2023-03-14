@@ -1,0 +1,37 @@
+{
+  "name": "h5p-exportable-text-area",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Library that displays an area where the user may input text, which is exportable as a doc-file",
+  "main": "-",
+  "scripts": {
+    "dev": "webpack --mode=development",
+    "watch": "webpack --mode=development --watch",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h5p/h5p-exportable-text-area.git"
+  },
+  "keywords": [
+    "h5p",
+    "library",
+    "export",
+    "docx"
+  ],
+  "author": "H5P Group AS <contact@h5p.group> (https://h5p.group)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/h5p/h5p-exportable-text-area/issues"
+  },
+  "homepage": "https://github.com/h5p/h5p-exportable-text-area#readme",
+  "devDependencies": {
+    "babel-loader": "^9.1.0",
+    "css-loader": "^6.7.3",
+    "docx": "^7.8.2",
+    "file-saver": "^2.0.5",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
