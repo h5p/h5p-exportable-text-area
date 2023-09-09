@@ -1,7 +1,7 @@
 {
   "semantics": [
     {
-      "label": "Label",
+      "label": "Titel",
       "description": "Etikett/rubrik för svar när användaren exporterar alla svar"
     },
     {},
