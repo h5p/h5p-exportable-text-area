@@ -50,6 +50,10 @@ const ExportableTextArea = (function ($) {
     }
   };
 
+  C.prototype.resetTask = function () {
+    this.$input.val('');
+  };
+
   return C;
 })(H5P.jQuery);
 
