@@ -4,7 +4,6 @@
       "label": "Popisek",
       "description": "Popisek/nadpis pro odpověď, když uživatel exportuje všechny odpovědi"
     },
-    {},
     {
       "label": "Popisek Export není podporován",
       "default": "Export není na vašem zařízení podporován"
