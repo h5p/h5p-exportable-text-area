@@ -4,7 +4,6 @@
       "label": "Etiket",
       "description": "Etiket/opskrif vir antwoorde wanneer gebruiker alle antwoorde uitvoer"
     },
-    {},
     {
       "label": "Uitvoer nie ondersteun nie etiket",
       "default": "Uitvoer word nie ondersteun op jou toestel nie"
