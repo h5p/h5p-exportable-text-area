@@ -4,7 +4,6 @@
       "label": "Etiķete",
       "description": "Etiķete/virsraksts atbildei kad lietotājs eksportē visas atbildes"
     },
-    {},
     {
       "label": "Eksportēšana neatbalstīšanas etiķete",
       "default": "Jūsu ierīce neatbalsta eksportēšanu"

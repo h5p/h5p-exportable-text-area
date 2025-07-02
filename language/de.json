@@ -4,7 +4,6 @@
       "label": "Beschriftung",
       "description": "Beschriftung/Überschrift für die Antwort, wenn der Benutzer alle Antworten exportiert"
     },
-    {},
     {
       "label": "Beschriftung, wenn Export nicht unterstützt wird",
       "default": "Export wird auf diesem Gerät nicht unterstützt"
