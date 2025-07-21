@@ -1,16 +1,16 @@
 {
   "semantics": [
     {
-      "label": "Label",
-      "description": "Label/heading for answer when user exports all answers"
+      "label": "Etichetă",
+      "description": "Etichetă/antet pentru răspuns atunci când utilizatorul exportă toate răspunsurile"
     },
     {},
     {
-      "label": "Export not supported label",
-      "default": "Export not supported on your device"
+      "label": "Etichetă export nesuportat",
+      "default": "Exportul nu este suportat pe dispozitivul dumneavoastră"
     },
     {
-      "label": "Include comments in the exported document"
+      "label": "Includeți comentariile în documentul exportat"
     }
   ]
 }
