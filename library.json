@@ -20,5 +20,12 @@
     {
       "path": "dist/h5p-exportable-text-area.js"
     }
+  ],
+  "preloadedDependencies": [
+    {
+      "machineName": "H5P.Components",
+      "majorVersion": 1,
+      "minorVersion": 0
+    }
   ]
 }

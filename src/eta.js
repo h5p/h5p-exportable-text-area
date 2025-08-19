@@ -17,8 +17,8 @@ const ExportableTextArea = (function ($) {
 
     var supportsExport = H5P.ExportableTextArea.Exporter.supportsExport();
     var labelId = (contentData.subContentId ? contentData.subContentId : id) + '-label';
-    this.$label = $('<div id="' + labelId + '" class="h5p-eta-label">' + this.header + '</div>');
-    this.$input = $('<textarea class="h5p-eta-input" aria-labelledby="' + labelId + '" ' + (supportsExport ? '' : 'placeholder="' + this.notSupportedText + '"') + 'data-index="' + this.index + '">' + this.defaultAnswer + '</textarea>');
+    this.$label = $('<div id="' + labelId + '" class="h5p-theme-question-description">' + this.header + '</div>');
+    this.$input = $('<textarea class="h5p-theme-input" placeholder="' + (params.placeholderText ?? "")  +  '"aria-labelledby="' + labelId + '" ' + (supportsExport ? '' : 'placeholder="' + this.notSupportedText + '"') + 'data-index="' + this.index + '">' + this.defaultAnswer + '</textarea>');
   }
 
   C.prototype.attach = function ($wrapper) {
@@ -88,7 +88,7 @@ ExportableTextArea.CPInterface = (function _eta_cp_interface_internal() {
       if (!$child.length) {
         $child = $currentSlide.children('.h5p-eta').has('[data-index=' + (i + 1) + ']');
         $child.find('.index').html(i + 1);
-        $child.find('.h5p-eta-input').attr('data-index', i);
+        $child.find('.h5p-theme-input').attr('data-index', i);
 
       }
     }
