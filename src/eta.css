@@ -20,11 +20,13 @@
 .h5p-eta p {
   color: var(--h5p-theme-text-secondary);
   font-size: var(--h5p-theme-font-size-m);
+  /* !important needed to override CP */
   margin: var(--h5p-theme-spacing-xxs) 0 !important;
   font-weight: bold;
 }
 
-.h5p-element-button-element.h5p-eta {
+/* Inside CP popup */
+.h5p-course-presentation .h5p-element-button-element.h5p-eta {
   box-sizing: border-box;
   padding: var(--h5p-theme-spacing-m);
   background-color: var(--h5p-theme-ui-base);
