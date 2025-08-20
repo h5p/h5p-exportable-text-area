@@ -4,6 +4,10 @@
       "label": "التسمية",
       "description": "التسمية / المتجهة إلى الجواب عندما يصدر المستخدم جميع الأجوبة"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
+    },
     {},
     {
       "label": "تسمية الاصدار لا تعمل",

@@ -4,6 +4,10 @@
       "label": "라벨",
       "description": "사용자가 모든 답변을 내보낼 때 답에 대한 라벨"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
+    },
     {},
     {
       "label": "내보낼 수 없는 경우 라벨",

@@ -4,6 +4,10 @@
       "label": "წარწერა",
       "description": "წარწერა/დასათაურება პასუხისთვის, როდესაც მომხმარებელი ყველა პასუხს აექსპორტებს"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
+    },
     {},
     {
       "label": "ხარვეზის წარწერა ექსპორტირებისას",

@@ -21,6 +21,14 @@
     ]
   },
   {
+    "name": "placeholderText",
+    "label": "Placeholder text",
+    "type": "text",
+    "description": "Example value or other placeholder text. Should not be used to replace the description of the input field.",
+    "importance": "low",
+    "optional": true
+  },
+  {
     "name": "index",
     "type": "number",
     "widget": "none"

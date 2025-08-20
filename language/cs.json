@@ -4,6 +4,10 @@
       "label": "Popisek",
       "description": "Popisek/nadpis pro odpověď, když uživatel exportuje všechny odpovědi"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
+    },
     {},
     {
       "label": "Popisek Export není podporován",

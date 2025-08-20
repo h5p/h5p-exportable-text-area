@@ -10,25 +10,24 @@
   width: 100%;
 }
 
-.h5p-eta .h5p-eta-input {
-  width: 100%;
+.h5p-eta .h5p-theme-input {
   resize: none !important;
-  font-size: 100%;
-  padding: 0.25em;
-  border: 1px solid #a0a0a0;
-  line-height: 1.25em;
+  height: 100%;
+  font-size: var(--h5p-theme-font-size-m);
+  font-family: var(--h5p-theme-font-name);
+}
+
+.h5p-eta p {
+  color: var(--h5p-theme-text-secondary);
+  font-size: var(--h5p-theme-font-size-m);
+  /* !important needed to override CP */
+  margin: var(--h5p-theme-spacing-xxs) 0 !important;
+  font-weight: bold;
+}
+
+/* Inside CP popup */
+.h5p-course-presentation .h5p-element-button-element.h5p-eta {
   box-sizing: border-box;
-  outline: none;
-  flex: auto;
-}
-.h5p-eta .h5p-eta-input:focus {
-  border-color: #53a0ff;
-}
-.h5p-eta-label {
-  overflow: hidden;
-  padding: 0.375em 0.5em;
-  flex: none;
-}
-.h5p-eta-label p:last-child {
-  margin-bottom: 0;
+  padding: var(--h5p-theme-spacing-m);
+  background-color: var(--h5p-theme-ui-base);
 }

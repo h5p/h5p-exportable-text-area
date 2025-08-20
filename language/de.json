@@ -4,6 +4,10 @@
       "label": "Beschriftung",
       "description": "Beschriftung/Überschrift für die Antwort, wenn der Benutzer alle Antworten exportiert"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
+    },
     {},
     {
       "label": "Beschriftung, wenn Export nicht unterstützt wird",

@@ -4,6 +4,10 @@
       "label": "Etichetta",
       "description": "Etichetta/intestazione per risposta quando l'apprendente esporta tutte le risposte"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
+    },
     {},
     {
       "label": "Etichetta per esportazione non supportata",

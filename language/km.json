@@ -4,6 +4,10 @@
       "label": "Label",
       "description": "Label/heading for answer when user exports all answers"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
+    },
     {},
     {
       "label": "Export not supported label",

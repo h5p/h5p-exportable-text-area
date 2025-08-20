@@ -4,6 +4,10 @@
       "label": "Etiķete",
       "description": "Etiķete/virsraksts atbildei kad lietotājs eksportē visas atbildes"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
+    },
     {},
     {
       "label": "Eksportēšana neatbalstīšanas etiķete",

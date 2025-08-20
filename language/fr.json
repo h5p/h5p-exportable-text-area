@@ -4,6 +4,10 @@
       "label": "Exporter les réponses",
       "description": "Texte d'entête pour l'exportation des réponses."
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
+    },
     {},
     {
       "label": "Texte d'exportation non supportée",

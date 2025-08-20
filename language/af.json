@@ -4,6 +4,10 @@
       "label": "Etiket",
       "description": "Etiket/opskrif vir antwoorde wanneer gebruiker alle antwoorde uitvoer"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
+    },
     {},
     {
       "label": "Uitvoer nie ondersteun nie etiket",
