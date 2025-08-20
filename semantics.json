@@ -24,7 +24,7 @@
     "name": "placeholderText",
     "label": "Placeholder text",
     "type": "text",
-    "description": "Example value or other placeholder text. Should not be used to replace the description of input-field, this value may not be available for screen-readers and also disappears when users start typing.",
+    "description": "Example value or other placeholder text. Should not be used to replace the description of input-field.",
     "importance": "low",
     "optional": true
   },

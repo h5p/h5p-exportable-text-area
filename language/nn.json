@@ -4,6 +4,10 @@
       "label": "Tittel",
       "description": "Tittel brukes også ved eksport"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of input-field."
+    },
     {},
     {
       "label": "Infotekst for \"ikkje støtta eksport\"",

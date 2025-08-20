@@ -1,13 +1,17 @@
 {
   "semantics": [
     {
-      "description": "Хэрэглэгч бүх хариултыг экспортлох үед хариултын шошго/гарчиг",
-      "label": "Шошго"
+      "label": "Шошго",
+      "description": "Хэрэглэгч бүх хариултыг экспортлох үед хариултын шошго/гарчиг"
+    },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of input-field."
     },
     {},
     {
-      "default": "Экспортыг таны төхөөрөмж дээр дэмждэггүй",
-      "label": "Экспортыг дэмждэггүй шошго"
+      "label": "Экспортыг дэмждэггүй шошго",
+      "default": "Экспортыг таны төхөөрөмж дээр дэмждэггүй"
     },
     {
       "label": "Экспортолсон баримт бичигт тайлбар оруулах"

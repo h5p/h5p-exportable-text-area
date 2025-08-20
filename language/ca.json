@@ -4,6 +4,10 @@
       "label": "Etiqueta",
       "description": "Etiqueta o encapçalament d’una resposta quan l’usuari exporta totes les respostes"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of input-field."
+    },
     {},
     {
       "label": "Etiqueta que indica que l’exportació no s’admet",

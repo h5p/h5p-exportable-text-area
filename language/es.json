@@ -4,6 +4,10 @@
       "label": "Etiqueta",
       "description": "Etiqueta/encabezado para respuesta cuando el usuario exporta todas las respuestas"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of input-field."
+    },
     {},
     {
       "label": "Etiqueta para exportación no soportada",

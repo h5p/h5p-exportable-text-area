@@ -4,6 +4,10 @@
       "label": "Етикет",
       "description": "Етикет/заглавие за отговор, когато потребителят експортира всички отговори"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of input-field."
+    },
     {},
     {
       "label": "Етикет за неподдържан експорт",

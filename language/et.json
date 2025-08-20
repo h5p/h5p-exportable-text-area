@@ -4,6 +4,10 @@
       "label": "Silt",
       "description": "Vastuse silt/pealkiri, kui kasutaja ekspordib kõik vastused"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of input-field."
+    },
     {},
     {
       "label": "Silt eksport ei ole toetatud",

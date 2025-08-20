@@ -4,6 +4,10 @@
       "label": "Label",
       "description": "Label/pennawd am ateb pan fydd defnyddiwr yn allforio pob ateb"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of input-field."
+    },
     {},
     {
       "label": "Label am allforio heb ei gynnal",

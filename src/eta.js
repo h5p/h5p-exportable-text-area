@@ -17,7 +17,7 @@ const ExportableTextArea = (function ($) {
 
     var supportsExport = H5P.ExportableTextArea.Exporter.supportsExport();
     var labelId = (contentData.subContentId ? contentData.subContentId : id) + '-label';
-    this.$label = $('<div id="' + labelId + '" class="h5p-theme-question-description">' + this.header + '</div>');
+    this.$label = $('<div id="' + labelId + '">' + this.header + '</div>');
     this.$input = $('<textarea class="h5p-theme-input" placeholder="' + (params.placeholderText ?? "")  +  '"aria-labelledby="' + labelId + '" ' + (supportsExport ? '' : 'placeholder="' + this.notSupportedText + '"') + 'data-index="' + this.index + '">' + this.defaultAnswer + '</textarea>');
   }
 

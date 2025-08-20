@@ -4,6 +4,10 @@
       "label": "Titel",
       "description": "Etikett/rubrik för svar när användaren exporterar alla svar"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of input-field."
+    },
     {},
     {
       "label": "Etikett för att export inte stöds",

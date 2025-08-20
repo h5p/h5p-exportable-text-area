@@ -13,16 +13,17 @@
 .h5p-eta .h5p-theme-input {
   resize: none !important;
   height: 100%;
+  font-size: var(--h5p-theme-font-size-m);
+  font-family: var(--h5p-theme-font-name);
 }
 
-.h5p-eta .h5p-theme-question-description {
-  overflow: hidden;
+.h5p-eta p {
+  color: var(--h5p-theme-text-secondary);
+  font-size: var(--h5p-theme-font-size-m);
+  margin: var(--h5p-theme-spacing-xxs) 0 !important;
+  font-weight: bold;
+}
+
+.h5p-element-button-element p {
   padding: 0.375em 0.5em;
-  flex: none;
-}
-.h5p-eta .h5p-theme-question-description p{
-  font-weight: 600;
-}
-.h5p-eta .h5p-theme-question-description p:last-child {
-  margin-bottom: 0;
 }

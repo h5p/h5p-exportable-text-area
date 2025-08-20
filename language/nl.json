@@ -4,6 +4,10 @@
       "label": "Label",
       "description": "Label/kop voor antwoord wanneer gebruiker alle antwoorden exporteert"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of input-field."
+    },
     {},
     {
       "label": "Export niet ondersteund label",

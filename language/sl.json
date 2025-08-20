@@ -4,6 +4,10 @@
       "label": "Oznaka",
       "description": "Oznaka/naslov odgovorov, ko uporabnik izvozi vse odgovore"
     },
+    {
+      "label": "Placeholder text",
+      "description": "Example value or other placeholder text. Should not be used to replace the description of input-field."
+    },
     {},
     {
       "label": "Besedilo ob nepodprtosti izvoza",
