@@ -24,6 +24,8 @@
   font-weight: bold;
 }
 
-.h5p-element-button-element p {
-  padding: 0.375em 0.5em;
+.h5p-element-button-element.h5p-eta {
+  box-sizing: border-box;
+  padding: var(--h5p-theme-spacing-m);
+  background-color: var(--h5p-theme-ui-base);
 }
