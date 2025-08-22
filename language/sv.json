@@ -4,7 +4,6 @@
       "label": "Titel",
       "description": "Etikett/rubrik för svar när användaren exporterar alla svar"
     },
-    {},
     {
       "label": "Etikett för att export inte stöds",
       "default": "Export stöds inte på din enhet"

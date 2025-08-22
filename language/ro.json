@@ -4,7 +4,6 @@
       "label": "Etichetă",
       "description": "Etichetă/antet pentru răspuns atunci când utilizatorul exportă toate răspunsurile"
     },
-    {},
     {
       "label": "Etichetă export nesuportat",
       "default": "Exportul nu este suportat pe dispozitivul dumneavoastră"
