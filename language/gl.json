@@ -8,7 +8,6 @@
       "label": "Placeholder text",
       "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
     },
-    {},
     {
       "label": "Etiqueta para exportación non soportada",
       "default": "Exportación non soportada no teu dispositivo"

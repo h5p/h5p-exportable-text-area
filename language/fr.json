@@ -8,7 +8,6 @@
       "label": "Placeholder text",
       "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
     },
-    {},
     {
       "label": "Texte d'exportation non supportée",
       "default": "La fonction export n'est pas supportée sur cet équipement."

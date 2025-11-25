@@ -8,7 +8,6 @@
       "label": "Placeholder text",
       "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
     },
-    {},
     {
       "label": "Vientiä ei tueta",
       "default": "Vientiä ei tueta laitteellasi"

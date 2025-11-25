@@ -8,7 +8,6 @@
       "label": "Placeholder text",
       "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
     },
-    {},
     {
       "label": "Esportazioak onartzen ez duen etiketa",
       "default": "Zure gailuan esportazioa ez da onartzen"
