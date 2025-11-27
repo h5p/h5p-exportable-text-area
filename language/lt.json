@@ -9,6 +9,9 @@
       "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
     },
     {
+      "label": "Index"
+    },
+    {
       "label": "„Eksportavimas nepalaikomas“ pavadinimas",
       "default": "Eksportavimas jūsų įrenginyje nepalaikomas"
     },

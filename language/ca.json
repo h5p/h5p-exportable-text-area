@@ -9,6 +9,9 @@
       "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
     },
     {
+      "label": "Index"
+    },
+    {
       "label": "Etiqueta que indica que l’exportació no s’admet",
       "default": "L’exportació no s’admet al vostre dispositiu"
     },
