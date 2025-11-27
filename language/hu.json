@@ -8,7 +8,9 @@
       "label": "Placeholder text",
       "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
     },
-    {},
+    {
+      "label": "Index"
+    },
     {
       "label": "Export not supported label",
       "default": "Export not supported on your device"

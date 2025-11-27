@@ -31,6 +31,7 @@
   {
     "name": "index",
     "type": "number",
+    "label": "Index",
     "widget": "none"
   },
   {
