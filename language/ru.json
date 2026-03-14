@@ -1,22 +1,22 @@
 {
   "semantics": [
     {
-      "label": "Label",
-      "description": "Label/heading for answer when user exports all answers"
+      "label": "Метка",
+      "description": "Метка/заголовок для ответа при экспорте всех ответов пользователем"
     },
     {
-      "label": "Placeholder text",
-      "description": "Example value or other placeholder text. Should not be used to replace the description of the input field."
+      "label": "Текст-заполнитель",
+      "description": "Пример значения или другой текст-заполнитель. Не следует использовать вместо описания поля ввода."
     },
     {
-      "label": "Index"
+      "label": "Индекс"
     },
     {
-      "label": "Export not supported label",
-      "default": "Export not supported on your device"
+      "label": "Метка «Экспорт не поддерживается»",
+      "default": "Экспорт не поддерживается на вашем устройстве"
     },
     {
-      "label": "Include comments in the exported document"
+      "label": "Добавьте комментарии в экспортированный документ."
     }
   ]
 }
